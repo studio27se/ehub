@@ -13,10 +13,10 @@ description: Dokumentation över hur du använder eHUB och dess moduler.
 #destination: ../your/new/path # Build relative path destination. The destination directory e.g. /blog
 #keep_files: [cache]
 #markdown: kramdown
-defaults:
-  -
-    values:
-      layout: libdoc/page
+# defaults:
+#   -
+#     values:
+#       layout: libdoc/page # Uncommenting brings pbms on static files that must not be associated to any layout
 kramdown:
     syntax_highlighter_opts:
         disable: true
