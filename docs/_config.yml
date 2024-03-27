@@ -5,8 +5,7 @@
 
 remote_theme: olivier3lanc/Jekyll-LibDoc
 title: eHUB Användarguide
-description: >- # Description of the docs. (>- means to ignore newlines until next param)
-  Dokumentation över hur du använder eHUB och dess moduler.
+description: Dokumentation över hur du använder eHUB och dess moduler.
 # IMPORTANT: on Github Pages deploys, url and baseurl must be commented or set to proper settings, otherwise links and resources URL are wrong
 # url: 
 # baseurl: 
