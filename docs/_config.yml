@@ -151,15 +151,15 @@ sidebar:
     logo:
         # LOGO URL
         # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
-        url: "https://ehub.se/v2/assets/media/logos/logo_ehub_white.png"
+        url: "https://ehub.se/v2/assets/media/logos/logo_ehub.png"
 
         # LOGO MAX HEIGHT
         # Logo image max height, applies only if url is set
-        max_height: 40px
+        max_height: 60px
 
         # LOGO FONT SIZE FALLBACK
         # If no logo url, font size of the site title, ignored if url is set
-        font_size: 32px
+        #font_size: 48px
 
     # ADDITIONAL LINKS
     # Allows to add links that are not pages included into the project
