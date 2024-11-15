@@ -184,6 +184,28 @@ sidebar:
           order: 510
           category: Externa länkar
 
+    # PAGES
+    # List of pages to include in the sidebar
+    pages:
+        - title: Installationer
+          url: /installationer/
+          order: 100
+        - title: Reparationer
+          url: /reparationer/
+          order: 200
+        - title: Lager
+          url: /lager/
+          order: 300
+        - title: Driftstörningar
+          url: /driftstorningar/
+          order: 400
+        - title: System
+          url: /system/
+          order: 500
+        - title: Release Information
+          url: /release-information/
+          order: 600
+
 # BADGES
 # Feature that allows to display badges into the footer https://shields.io image html and url
 shields:

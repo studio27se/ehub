@@ -1,0 +1,36 @@
+name: Update Release Information
+
+on:
+  release:
+    types: [created, published, updated]
+
+jobs:
+  update-release-info:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Fetch release information from ehub-webapp
+      id: fetch-webapp-release
+      run: |
+        curl -s https://api.github.com/repos/studio27se/ehub-webapp/releases/latest > webapp_release.json
+
+    - name: Fetch release information from ehub-backend-api
+      id: fetch-backend-release
+      run: |
+        curl -s https://api.github.com/repos/studio27se/ehub-backend-api/releases/latest > backend_release.json
+
+    - name: Update release information page
+      id: update-release-info
+      run: |
+        webapp_release_notes=$(jq -r '.body' webapp_release.json)
+        backend_release_notes=$(jq -r '.body' backend_release.json)
+        echo -e "---\nlayout: libdoc/page\ntitle: Release Information\n---\n\n## Release Information\n\n### eHUB Webapp\n\n$webapp_release_notes\n\n### eHUB Backend API\n\n$backend_release_notes" > docs/release-information.md
+
+    - name: Commit and push changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Update release information"
+        branch: main
