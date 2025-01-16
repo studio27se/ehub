@@ -160,6 +160,15 @@ sidebar:
         # LOGO FONT SIZE FALLBACK
         # If no logo url, font size of the site title, ignored if url is set
         #font_size: 48px
+    
+    # NAVIGATION
+    - title: "Getting Started"
+        path: "get-started"
+        children:
+          - title: "Introduction"
+            path: "get-started/introduction"
+          - title: "Installation"
+            path: "get-started/installation"
 
     # ADDITIONAL LINKS
     # Allows to add links that are not pages included into the project
