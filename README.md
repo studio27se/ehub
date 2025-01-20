@@ -22,6 +22,7 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 
 | Release Version | Date         | Notes                           |
 | --------------- | ------------ | ------------------------------- |
+| [v2.9.4](https://github.com/studio27se/ehub/releases/tag/v2.9.4)         | Jan 14, 2025 |                                 |
 | v2.10.0         | Jan 23, 2025 |                                 |
 | v2.11.0         | Feb 6, 2025  |                                 |
 | v2.12.0         | Feb 20, 2025 |                                 |
@@ -33,7 +34,6 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 | v2.17.0         | May 15, 2025 |                                 |
 | v2.17.X         | May 27, 2025 | Off cycle due to Ascension Day  |
 | v2.18.0         | Jun 12, 2025 |                                 |
-
 
 
 ## Communication
