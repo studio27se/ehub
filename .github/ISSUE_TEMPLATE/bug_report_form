@@ -1,0 +1,124 @@
+name: Buggrapport
+description: Rapportera en felaktighet i eHUB
+title: ''
+labels: 
+  - bugg
+  - type: bug
+assignees: FredrikElliot
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Beskriv buggen**
+        En klar och kortfattad beskrivning av vad felet är.
+
+  - type: textarea
+    id: beskriv_buggen
+    attributes:
+      label: Beskriv buggen
+      description: En klar och kortfattad beskrivning av vad felet är.
+      placeholder: 'Beskriv buggen här...'
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **För att reproducera**
+        Steg för att återskapa beteendet:
+        1. Gå till '...'
+        2. Klicka på '....'
+        3. Rulla ner till '....'
+        4. Se felet
+
+  - type: textarea
+    id: for_att_reproducera
+    attributes:
+      label: För att reproducera
+      description: Steg för att återskapa beteendet.
+      placeholder: 'Steg för att återskapa beteendet här...'
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Förväntat beteende**
+        En klar och kortfattad beskrivning av vad du förväntade dig att hända.
+
+  - type: textarea
+    id: forvantat_beteende
+    attributes:
+      label: Förväntat beteende
+      description: En klar och kortfattad beskrivning av vad du förväntade dig att hända.
+      placeholder: 'Förväntat beteende här...'
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Skärmbilder**
+        Om det är tillämpligt, lägg till skärmbilder för att förklara ditt problem.
+
+  - type: textarea
+    id: skarmbilder
+    attributes:
+      label: Skärmbilder
+      description: Om det är tillämpligt, lägg till skärmbilder för att förklara ditt problem.
+      placeholder: 'Lägg till skärmbilder här...'
+
+  - type: markdown
+    attributes:
+      value: |
+        **Stationär dator (vänligen fyll i följande information):**
+         - Webbläsare [t.ex. chrome, safari]
+
+  - type: input
+    id: stationar_dator_webblasare
+    attributes:
+      label: Webbläsare
+      description: Webbläsare [t.ex. chrome, safari]
+      placeholder: 'Ange webbläsare här...'
+
+  - type: markdown
+    attributes:
+      value: |
+        **Smartphone (vänligen fyll i följande information):**
+         - Enhet: [t.ex. iPhone6]
+         - OS: [t.ex. iOS8.1]
+         - Webbläsare [t.ex. standard webbläsare, safari]
+
+  - type: input
+    id: smartphone_enhet
+    attributes:
+      label: Enhet
+      description: Enhet [t.ex. iPhone6]
+      placeholder: 'Ange enhet här...'
+
+  - type: input
+    id: smartphone_os
+    attributes:
+      label: OS
+      description: OS [t.ex. iOS8.1]
+      placeholder: 'Ange OS här...'
+
+  - type: input
+    id: smartphone_webblasare
+    attributes:
+      label: Webbläsare
+      description: Webbläsare [t.ex. standard webbläsare, safari]
+      placeholder: 'Ange webbläsare här...'
+
+  - type: markdown
+    attributes:
+      value: |
+        **Ytterligare sammanhang**
+        Lägg till annan kontext om problemet här.
+
+  - type: textarea
+    id: ytterligare_sammanhang
+    attributes:
+      label: Ytterligare sammanhang
+      description: Lägg till annan kontext om problemet här.
+      placeholder: 'Ange ytterligare sammanhang här...'
