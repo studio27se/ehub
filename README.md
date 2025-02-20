@@ -18,22 +18,22 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 - **Minor Releases:** Add enhancements or smaller features. Indicated by increase of the second number of the version. (e.g., v2.**12**.0)
 - **Patch Releases:** Focus on bug fixes or urgent updates. Indicated by increase of the third number of the version. (e.g., v2.11.**1**)
 
-## Upcoming Releases
+## Upcoming and Deployed Releases
 
 | Release Version | Date         | Notes                           |
 | --------------- | ------------ | ------------------------------- |
 | [v2.9.4](https://github.com/studio27se/ehub/releases/tag/v2.9.4)         | Jan 14, 2025 |                                 |
 | [v2.10.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.10.0-beta)         | Jan 23, 2025 |                                 |
-| v2.10.0 / v2.11.0-beta         | Feb 6, 2025  |                                 |
-| v2.12.0         | Feb 20, 2025 |                                 |
-| v2.13.0         | Mar 6, 2025  |                                 |
-| v2.14.0         | Mar 20, 2025 |                                 |
-| v2.15.0         | Apr 3, 2025  |                                 |
-| v2.15.X         | Apr 15, 2025 | Off cycle due to Easter vacations |
-| v2.16.0         | Apr 29, 2025  | Off cycle due to May Day        |
-| v2.17.0         | May 15, 2025 |                                 |
-| v2.17.X         | May 27, 2025 | Off cycle due to Ascension Day  |
-| v2.18.0         | Jun 12, 2025 |                                 |
+| [v2.10.1](https://github.com/studio27se/ehub/releases/tag/v2.10.1) / [v2.11.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.11.0-beta)         | Feb 6, 2025  |                                 |
+| [v2.11.0](https://github.com/studio27se/ehub/releases/tag/v2.11.0)         | Feb 20, 2025 | Implementation of Installation module                                |
+| v2.12.0         | Mar 6, 2025  |                                 |
+| v2.13.0         | Mar 20, 2025 |                                 |
+| v2.14.0         | Apr 3, 2025  |                                 |
+| v2.14.X         | Apr 15, 2025 | Off cycle due to Easter vacations |
+| v2.15.0         | Apr 29, 2025  | Off cycle due to May Day        |
+| v2.16.0         | May 15, 2025 |                                 |
+| v2.16.X         | May 27, 2025 | Off cycle due to Ascension Day  |
+| v2.17.0         | Jun 12, 2025 |                                 |
 
 
 ## Communication
