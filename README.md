@@ -26,7 +26,7 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 | [v2.10.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.10.0-beta)         | Jan 23, 2025 |                                 |
 | [v2.10.1](https://github.com/studio27se/ehub/releases/tag/v2.10.1) / [v2.11.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.11.0-beta)         | Feb 6, 2025  |                                 |
 | [v2.11.0](https://github.com/studio27se/ehub/releases/tag/v2.11.0)         | Feb 20, 2025 | Implementation of Installation module                                |
-| v2.12.0         | Mar 6, 2025  |                                 |
+| [v2.13.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.13.0-beta)         | Mar 6, 2025  |                                 |
 | v2.13.0         | Mar 20, 2025 |                                 |
 | v2.14.0         | Apr 3, 2025  |                                 |
 | v2.14.X         | Apr 15, 2025 | Off cycle due to Easter vacations |
