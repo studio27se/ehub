@@ -27,13 +27,14 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 | [v2.10.1](https://github.com/studio27se/ehub/releases/tag/v2.10.1) / [v2.11.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.11.0-beta)         | Feb 6, 2025  |                                 |
 | [v2.11.0](https://github.com/studio27se/ehub/releases/tag/v2.11.0)         | Feb 20, 2025 | Implementation of Installation module                                |
 | [v2.13.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.13.0-beta)         | Mar 6, 2025  |                                 |
-| v2.13.0         | Mar 20, 2025 |                                 |
-| v2.14.0         | Apr 3, 2025  |                                 |
-| v2.14.X         | Apr 15, 2025 | Off cycle due to Easter vacations |
-| v2.15.0         | Apr 29, 2025  | Off cycle due to May Day        |
-| v2.16.0         | May 15, 2025 |                                 |
-| v2.16.X         | May 27, 2025 | Off cycle due to Ascension Day  |
-| v2.17.0         | Jun 12, 2025 |                                 |
+| [v.2.13.1](https://github.com/studio27se/ehub/releases/tag/v2.13.1) | Mar 11, 2025 | Off cycle due to operational needs |
+| v2.14.0         | Mar 20, 2025 |                                 |
+| v2.15.0         | Apr 3, 2025  |                                 |
+| v2.15.X         | Apr 15, 2025 | Off cycle due to Easter vacations |
+| v2.16.0         | Apr 29, 2025  | Off cycle due to May Day        |
+| v2.17.0         | May 15, 2025 |                                 |
+| v2.17.X         | May 27, 2025 | Off cycle due to Ascension Day  |
+| v2.18.0         | Jun 12, 2025 |                                 |
 
 
 ## Communication
