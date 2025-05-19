@@ -40,7 +40,7 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 
 
 ## Communication
-- **Release Notes:** All updates will be documented in the repositorty [releases](https://github.com/studio27se/ehub/releases).
+- **Release Notes:** All updates will be documented in the repository [releases](https://github.com/studio27se/ehub/releases).
 - **Notifications:** User's with impacted change requests will be noted for testing in the acceptance environment, as well as when the package is released.
 
 ## Contribution to Releases
