@@ -169,6 +169,15 @@ sidebar:
             path: "get-started/introduction"
           - title: "Installation"
             path: "get-started/installation"
+    - title: "API Dokumentation"
+        path: "api"
+        children:
+          - title: "Mobilapplikationens GET-anrop"
+            path: "api/mobile-app-get-requests"
+          - title: "Mall för GET-anrop dokumentation"
+            path: "api/get-request-template"
+          - title: "Automatisk GET-anrop upptäckt"
+            path: "api/automated-discovery"
 
     # ADDITIONAL LINKS
     # Allows to add links that are not pages included into the project
