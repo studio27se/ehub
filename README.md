@@ -22,23 +22,21 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 
 | Release Version | Date         | Notes                           |
 | --------------- | ------------ | ------------------------------- |
-| [v2.9.4](https://github.com/studio27se/ehub/releases/tag/v2.9.4)         | Jan 14, 2025 |                                 |
-| [v2.10.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.10.0-beta)         | Jan 23, 2025 |                                 |
-| [v2.10.1](https://github.com/studio27se/ehub/releases/tag/v2.10.1) / [v2.11.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.11.0-beta)         | Feb 6, 2025  |                                 |
-| [v2.11.0](https://github.com/studio27se/ehub/releases/tag/v2.11.0)         | Feb 20, 2025 | Implementation of Installation module                                |
-| [v2.13.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.13.0-beta)         | Mar 6, 2025  |                                 |
-| [v2.13.1](https://github.com/studio27se/ehub/releases/tag/v2.13.1) | Mar 11, 2025 | Off cycle due to operational needs |
-| [v2.13.2](https://github.com/studio27se/ehub/releases/tag/v2.13.2) | Mar 12, 2025 | Off cycle due to operational needs |
-| [v2.13.3](https://github.com/studio27se/ehub/releases/tag/v2.13.3) | Mar 13, 2025 | Off cycle due to operational needs |
-| [v2.14.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.14.0-beta)         | Mar 20, 2025 |                                 |
-| [v2.14.1](https://github.com/studio27se/ehub/releases/tag/v2.14.1) / [v2.15.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.15.0-beta)        | Apr 3, 2025  |                                 |
-| [v2.15.1](https://github.com/studio27se/ehub/releases/tag/v2.15.1) / [v2.16.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.16.0-beta)        | Apr 15, 2025 | Off cycle due to Easter vacations |
-| [v2.16.2](https://github.com/studio27se/ehub/releases/tag/v2.16.2)         | Apr 29, 2025  | Off cycle due to May Day        |
-| [v2.17.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.17.0-beta)         | May 15, 2025 |                                 |
-| [v2.17.1](https://github.com/studio27se/ehub/releases/tag/v2.17.1) / [v2.18.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.18.0-beta)         | May 27, 2025 | Off cycle due to Ascension Day  |
-| [v2.18.3](https://github.com/studio27se/ehub/releases/tag/v2.18.3) / [v2.19.3-beta](https://github.com/studio27se/ehub/releases/tag/v2.19.3-beta)        | Jun 12, 2025 |                                 |
+| [v2.18.3](https://github.com/studio27se/ehub/releases/tag/v2.18.3) / [v2.19.3-beta](https://github.com/studio27se/ehub/releases/tag/v2.19.3-beta)| Jun 12, 2025 ||
 | <del>v2.19.X</del>         | <del>Jul 10, 2025</del> | <del>Patches or minor fixes</del>          |
 | [v2.20.0-beta](https://github.com/studio27se/ehub/releases/tag/v.2.20.0-beta)         | Aug 14, 2025 |          |
+| [v2.20.0](https://github.com/studio27se/ehub/releases/tag/v2.20.0)         | Aug 21, 2025 |         |
+|v2.21.0|Sep 4, 2025||
+|v2.22.0|Sep 18, 2025||
+|v2.23.0|Oct 2, 2025||
+|v2.24.0|Oct 16, 2025||
+|v2.25.0|Oct 30, 2025||
+|v2.26.0|Nov 13, 2025||
+|v2.27.0|Nov 27, 2025||
+|v2.28.0|Dec 11, 2025||
+|v2.29.0|Jan 22, 2026||
+
+
 
 
 ## Communication
