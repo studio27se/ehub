@@ -31,10 +31,9 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 |[v2.22.1](https://github.com/studio27se/ehub/releases/tag/v2.22.1) / [v2.23.0 (pre-release)](https://github.com/studio27se/ehub/releases/tag/v2.23.0)|Oct 3, 2025||
 |[v2.24.0 (pre-release)](https://github.com/studio27se/ehub/releases/tag/v2.24.0)/ [v2.23.4](https://github.com/studio27se/ehub/releases/tag/v2.23.4)|Oct 16, 2025|Faktisk release 2025-10-19|
 |<del>v2.25.0</del>|<del>Oct 30, 2025</del>|Previous release will have extended test period|
-|v2.24.0|Nov 13, 2025||
-|v2.25.0|Nov 27, 2025||
-|v2.26.0|Dec 11, 2025||
-|v2.27.0|Jan 22, 2026||
+|[v2.24.8](https://github.com/studio27se/ehub/releases/tag/v2.24.8)|Nov 13, 2025||
+|[v2.25.0](https://github.com/studio27se/ehub/releases/tag/v2.25.0)|Dec 9, 2025||
+|v2.26.0|Jan 22, 2026||
 
 
 
