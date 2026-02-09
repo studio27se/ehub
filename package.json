@@ -1,0 +1,28 @@
+{
+  "name": "ehub-help-center-generator",
+  "version": "1.0.0",
+  "description": "Generator for eHUB Help Center documentation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-help-center.js",
+    "validate": "node scripts/validate-help-center.js",
+    "build:validate": "npm run validate && npm run build"
+  },
+  "keywords": [
+    "documentation",
+    "help-center",
+    "markdown"
+  ],
+  "author": "Studio 27 AB",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "marked": "^11.1.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
