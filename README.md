@@ -1,7 +1,9 @@
 # Introduction
-This is a report only repository for the online entreprenuer operations and documentation software eHUB. This means no code is hosted here and the main purpose is to enable users of eHUB to report issues they find in the software as well submit ideas for improvement. This should be done as an issue, from the [issues](https://github.com/studio27se/ehub/issues/) tab.
+This repository serves two primary purposes for the eHUB online entrepreneur operations and documentation software:
 
-Issues are like tickets, and do not only cover problems/bugs as the naming implies. Also improvements and refactors are covered as issues, and will be found in the issue list.
+1. **Issue Tracking**: Report bugs, suggest improvements, and track feature requests through the [issues](https://github.com/studio27se/ehub/issues/) tab. Issues cover not only problems but also enhancements and refactors.
+
+2. **Help Center Documentation**: Source of truth for eHUB's help center, containing Markdown-based documentation that is consumed by the webapp, mobile app, and other clients. See the [Help Center README](help-center/README.md) for details.
 
 You can always ask questions through the contact form on our [webpage](https://studio27.se/contact/).
 
@@ -44,6 +46,39 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 
 ## Contribution to Releases
 Contributors can view planned features in the [issues list](https://github.com/studio27se/ehub/issues/) and propose changes by creating new issues.
+
+# Help Center Documentation
+
+This repository contains the source of truth for eHUB's help center documentation.
+
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Validate documentation
+npm run validate
+
+# Generate help-center.json
+npm run build
+
+# Validate and build together
+npm run build:validate
+```
+
+## Documentation Structure
+
+- **`help-center/`** - Markdown documentation files organized by module
+- **`help-center-toc.yaml`** - Table of contents defining structure and metadata
+- **`scripts/`** - Generator and validation scripts
+- **`.github/workflows/`** - GitHub Actions templates for automation
+
+## Learn More
+
+- [Help Center Documentation Guide](help-center/README.md) - Complete guide for writing and managing documentation
+- [CDN Deployment Strategy](docs/CDN-STRATEGY.md) - How to serve documentation via CDN
+- [GitHub Actions Setup](.github/workflows/README.md) - Automated documentation PR workflows
 
 ---
 

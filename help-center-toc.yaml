@@ -1,0 +1,75 @@
+# eHUB Help Center - Table of Contents
+# This file defines the structure, hierarchy, and metadata for the help center
+
+version: "1.0.0"
+modules:
+  - id: getting-started
+    title: Getting Started
+    description: Learn the basics of using eHUB
+    icon: rocket
+    order: 1
+    articles:
+      - id: getting-started-introduction
+        title: Introduction to eHUB
+        file: help-center/getting-started/introduction.md
+        order: 1
+      - id: getting-started-first-steps
+        title: First Steps
+        file: help-center/getting-started/first-steps.md
+        order: 2
+      - id: getting-started-navigation
+        title: Navigating the Platform
+        file: help-center/getting-started/navigation.md
+        order: 3
+
+  - id: features
+    title: Features
+    description: Discover what eHUB can do for you
+    icon: star
+    order: 2
+    articles:
+      - id: features-projects
+        title: Project Management
+        file: help-center/features/projects.md
+        order: 1
+      - id: features-documentation
+        title: Documentation System
+        file: help-center/features/documentation.md
+        order: 2
+
+  - id: settings
+    title: Settings
+    description: Configure your account and workspace
+    icon: settings
+    order: 3
+    articles:
+      - id: settings-account
+        title: Account Settings
+        file: help-center/settings/account.md
+        order: 1
+      - id: settings-workspace
+        title: Workspace Settings
+        file: help-center/settings/workspace.md
+        order: 2
+
+  - id: integrations
+    title: Integrations
+    description: Connect eHUB with other tools
+    icon: plug
+    order: 4
+    articles:
+      - id: integrations-overview
+        title: Integrations Overview
+        file: help-center/integrations/overview.md
+        order: 1
+
+  - id: troubleshooting
+    title: Troubleshooting
+    description: Find solutions to common problems
+    icon: wrench
+    order: 5
+    articles:
+      - id: troubleshooting-common-issues
+        title: Common Issues
+        file: help-center/troubleshooting/common-issues.md
+        order: 1
