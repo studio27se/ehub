@@ -22,18 +22,18 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 
 | Release Version | Date         | Notes                           |
 | --------------- | ------------ | ------------------------------- |
-| [v2.18.3](https://github.com/studio27se/ehub/releases/tag/v2.18.3) / [v2.19.3-beta](https://github.com/studio27se/ehub/releases/tag/v2.19.3-beta)| Jun 12, 2025 ||
-| <del>v2.19.X</del>         | <del>Jul 10, 2025</del> | <del>Patches or minor fixes</del>          |
-| [v2.20.0-beta](https://github.com/studio27se/ehub/releases/tag/v.2.20.0-beta)         | Aug 14, 2025 |          |
-| [v2.20.0](https://github.com/studio27se/ehub/releases/tag/v2.20.0)         | Aug 21, 2025 |         |
-|[v2.21.0-beta](https://github.com/studio27se/ehub/releases/tag/v.21.0-beta)|Sep 4, 2025||
-|[v2.21.1](https://github.com/studio27se/ehub/releases/tag/v2.21.1) / [v2.22.0-beta](https://github.com/studio27se/ehub/releases/tag/v2.22.0-beta)|Sep 18, 2025||
-|[v2.22.1](https://github.com/studio27se/ehub/releases/tag/v2.22.1) / [v2.23.0 (pre-release)](https://github.com/studio27se/ehub/releases/tag/v2.23.0)|Oct 3, 2025||
-|[v2.24.0 (pre-release)](https://github.com/studio27se/ehub/releases/tag/v2.24.0)/ [v2.23.4](https://github.com/studio27se/ehub/releases/tag/v2.23.4)|Oct 16, 2025|Faktisk release 2025-10-19|
-|<del>v2.25.0</del>|<del>Oct 30, 2025</del>|Previous release will have extended test period|
-|[v2.24.8](https://github.com/studio27se/ehub/releases/tag/v2.24.8)|Nov 13, 2025||
-|[v2.25.2](https://github.com/studio27se/ehub/releases/tag/v2.25.2)|Dec 9, 2025||
 |[v2.26.0 (pre-release)](https://github.com/studio27se/ehub/releases/tag/v2.26.0)|Jan 22, 2026||
+|[v2.26.0|Feb 19, 2026||
+|[v2.27.0|Mar 5, 2026||
+|[v2.28.0|Mar 19, 2026||
+|[v2.29.0|Mar 31 , 2026|Adjusted due to Swedish holiday|
+|[v2.30.0|Apr 16, 2026||
+|[v2.31.0|Apr 28, 2026|Adjusted due to Swedish holiday|
+|[v2.32.0|May 12, 2026|Adjusted due to Swedish holiday|
+|[v2.33.0|May 28, 2026||
+|[v2.34.0|Jun 11, 2026||
+|[v2.35.0|Jun 25, 2026||
+|[v2.36.0|Jul 9, 2026||
 
 
 
