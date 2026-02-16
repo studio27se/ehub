@@ -23,17 +23,17 @@ This section outlines the upcoming release dates for eHUB as holistic system.
 | Release Version | Date         | Notes                           |
 | --------------- | ------------ | ------------------------------- |
 |[v2.26.0 (pre-release)](https://github.com/studio27se/ehub/releases/tag/v2.26.0)|Jan 22, 2026||
-|[v2.26.0|Feb 19, 2026||
-|[v2.27.0|Mar 5, 2026||
-|[v2.28.0|Mar 19, 2026||
-|[v2.29.0|Mar 31 , 2026|Adjusted due to Swedish holiday|
-|[v2.30.0|Apr 16, 2026||
-|[v2.31.0|Apr 28, 2026|Adjusted due to Swedish holiday|
-|[v2.32.0|May 12, 2026|Adjusted due to Swedish holiday|
-|[v2.33.0|May 28, 2026||
-|[v2.34.0|Jun 11, 2026||
-|[v2.35.0|Jun 25, 2026||
-|[v2.36.0|Jul 9, 2026||
+|v2.26.0|Feb 19, 2026||
+|v2.27.0|Mar 5, 2026||
+|v2.28.0|Mar 19, 2026||
+|v2.29.0|Mar 31 , 2026|Adjusted due to Swedish holiday|
+|v2.30.0|Apr 16, 2026||
+|v2.31.0|Apr 28, 2026|Adjusted due to Swedish holiday|
+|v2.32.0|May 12, 2026|Adjusted due to Swedish holiday|
+|v2.33.0|May 28, 2026||
+|v2.34.0|Jun 11, 2026||
+|v2.35.0|Jun 25, 2026||
+|v2.36.0|Jul 9, 2026||
 
 
 
