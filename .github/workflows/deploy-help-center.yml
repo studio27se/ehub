@@ -1,0 +1,144 @@
+name: Deploy Help Center to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'help-center/**'
+      - 'help-center-toc.yaml'
+      - 'scripts/**'
+      - 'package.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Validate and build
+        run: npm run build:validate
+      
+      - name: Create public directory
+        run: |
+          mkdir -p public
+          cp help-center.json public/
+          
+          # Create index.json with metadata
+          cat > public/index.json << EOF
+          {
+            "version": "1.0.0",
+            "description": "eHUB Help Center API",
+            "endpoints": {
+              "help-center": "help-center.json"
+            },
+            "generated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          }
+          EOF
+          
+          # Create a simple HTML index
+          cat > public/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>eHUB Help Center API</title>
+            <style>
+              body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+              h1 { color: #3699ff; }
+              code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+              pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+              .endpoint { margin: 20px 0; padding: 15px; border-left: 4px solid #3699ff; background: #f9f9f9; }
+            </style>
+          </head>
+          <body>
+            <h1>eHUB Help Center API</h1>
+            <p>This endpoint serves the eHUB help center documentation in JSON format.</p>
+            
+            <div class="endpoint">
+              <h2>Available Endpoints</h2>
+              <ul>
+                <li><code>help-center.json</code> - Complete help center data</li>
+                <li><code>index.json</code> - API metadata</li>
+              </ul>
+            </div>
+            
+            <h2>Usage Example</h2>
+            <pre><code>fetch('https://studio27se.github.io/ehub/help-center.json')
+            .then(response => response.json())
+            .then(data => {
+              console.log('Modules:', data.modules.length);
+              console.log('Version:', data.version);
+            });</code></pre>
+            
+            <h2>JSON Structure</h2>
+            <pre><code>{
+            "version": "1.0.0",
+            "generated": "2026-02-09T12:00:00.000Z",
+            "modules": [
+              {
+                "id": "module-id",
+                "title": "Module Title",
+                "description": "Description",
+                "icon": "icon-name",
+                "order": 1,
+                "articles": [
+                  {
+                    "id": "article-id",
+                    "title": "Article Title",
+                    "moduleId": "module-id",
+                    "order": 1,
+                    "content": "Markdown content..."
+                  }
+                ]
+              }
+            ]
+          }</code></pre>
+            
+            <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666;">
+              <p>eHUB Help Center Documentation System | <a href="https://github.com/studio27se/ehub">GitHub Repository</a></p>
+            </footer>
+          </body>
+          </html>
+          EOF
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+  
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
