@@ -81,12 +81,15 @@ def build_prompt(instructions, target_version, release_date, components):
 
 
 def generate_document(prompt):
+    environment = os.environ.copy()
+    environment.pop("SUBREPO_READ_TOKEN", None)
     result = subprocess.run(
         ["copilot", "-s", "--no-ask-user"],
         input=prompt,
         text=True,
         capture_output=True,
         check=True,
+        env=environment,
     )
     document = result.stdout.strip()
     if not document:

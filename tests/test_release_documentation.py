@@ -1,6 +1,9 @@
 import importlib.util
+import os
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
 
 
 SCRIPT = (
@@ -73,6 +76,25 @@ class SelectReleaseTests(unittest.TestCase):
             release_documentation.validate_document(
                 document, "2.8.12", "2026-10-09", components
             )
+
+
+class GenerateDocumentTests(unittest.TestCase):
+    def test_does_not_pass_subrepository_token_to_copilot(self):
+        with patch.dict(
+            os.environ,
+            {"SUBREPO_READ_TOKEN": "read-only-token", "GITHUB_TOKEN": "copilot-token"},
+            clear=True,
+        ), patch.object(
+            release_documentation.subprocess,
+            "run",
+            return_value=SimpleNamespace(stdout="generated document"),
+        ) as run:
+            result = release_documentation.generate_document("prompt")
+
+        environment = run.call_args.kwargs["env"]
+        self.assertEqual(result, "generated document")
+        self.assertIn("GITHUB_TOKEN", environment)
+        self.assertNotIn("SUBREPO_READ_TOKEN", environment)
 
 
 if __name__ == "__main__":
