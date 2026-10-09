@@ -1,0 +1,64 @@
+name: Generate release documentation
+
+on:
+  release:
+    types: [published]
+
+permissions: {}
+
+concurrency:
+  group: release-documentation-${{ github.event.release.tag_name }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      copilot-requests: write
+    outputs:
+      release_notes: ${{ steps.document.outputs.release_notes }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install GitHub Copilot CLI
+        run: npm install --global @github/copilot@1.0.94
+
+      - name: Generate and publish release documentation
+        id: document
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          SUBREPO_READ_TOKEN: ${{ secrets.SUBREPO_READ_TOKEN }}
+        run: |
+          document_path="$RUNNER_TEMP/release-documentation.md"
+          python .github/scripts/release_documentation.py > "$document_path"
+          delimiter="$(python -c 'import uuid; print(uuid.uuid4().hex)')"
+          {
+            echo "release_notes<<$delimiter"
+            cat "$document_path"
+            echo "$delimiter"
+          } >> "$GITHUB_OUTPUT"
+
+  publish:
+    needs: generate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Update the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_NOTES: ${{ needs.generate.outputs.release_notes }}
+        run: |
+          notes_path="$RUNNER_TEMP/release-documentation.md"
+          printf '%s' "$RELEASE_NOTES" > "$notes_path"
+          gh release edit "$RELEASE_TAG" --notes-file "$notes_path"

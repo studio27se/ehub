@@ -5,6 +5,14 @@ Issues are like tickets, and do not only cover problems/bugs as the naming impli
 
 You can always ask questions through the contact form on our [webpage](https://studio27.se/contact/).
 
+# Automatic Release Documentation
+
+When a release is published, a workflow finds the latest matching production or pre-release for the same major and minor version in each eHUB component repository, asks GitHub Copilot CLI to create Swedish user-facing documentation, and updates the release notes.
+
+The workflow uses the built-in `GITHUB_TOKEN`, with separate least-privilege permissions for generating documentation and updating a release. In the Studio 27 organization settings, enable **Allow use of Copilot CLI billed to the organization** under the GitHub Copilot CLI policy. No repository token configuration is needed.
+
+The workflow reads public component repositories without an additional token. If any component repository is private, add a fine-grained personal access token as the `SUBREPO_READ_TOKEN` Actions secret in this repository, granting it **Contents: read** access to all three component repositories.
+
 # Release Schedule
 
 This section outlines the upcoming release dates for eHUB as holistic system.
