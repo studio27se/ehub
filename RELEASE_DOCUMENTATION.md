@@ -266,6 +266,12 @@ The change directly affects user-visible functionality.
 
 # Aggregation Rules
 
+When a repository has no matching release:
+
+- Keep its component section, using only the component name as the heading (without a version).
+- Write “Inga ändringar för denna release.”
+- Do not invent a version, changes, or a changelog link.
+
 When multiple releases are provided for the same repository:
 
 - Merge them into one coherent section.
@@ -323,7 +329,7 @@ Before producing the final release documentation, verify:
 5. All sections are user-focused.
 6. No developer-centric wording remains.
 7. GitHub Markdown formatting is valid.
-8. Backend/Webbapp/Mobilapp sections are present when release information exists.
+8. Backend/Webbapp/Mobilapp sections are present; components without matching releases have an unversioned heading and state that there are no changes.
 9. Full changelog links are preserved.
 10. Repeated technical changes have been merged into one user-facing description.
 

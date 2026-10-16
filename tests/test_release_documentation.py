@@ -2,6 +2,7 @@ import importlib.util
 import io
 import os
 import unittest
+from itertools import product
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -62,9 +63,12 @@ class SelectReleaseTests(unittest.TestCase):
     def test_requires_release_links_in_generated_document(self):
         components = [
             {
+                "name": "Backend",
+                "version": "v2.8.10",
                 "html_url": "https://github.com/studio27se/ehub-backend-api/releases/tag/v2.8.10"
             },
-            {"html_url": None},
+            {"name": "Webbapp", "version": None, "html_url": None},
+            {"name": "Mobilapp", "version": None, "html_url": None},
         ]
         document = """# **Release Dokumentation – Version 2.8.12**
 **Datum:** 2026-10-09
@@ -77,6 +81,67 @@ class SelectReleaseTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "omitted changelog links"):
             release_documentation.validate_document(
                 document, "2.8.12", "2026-10-09", components
+            )
+
+
+class ValidateDocumentTests(unittest.TestCase):
+    def setUp(self):
+        self.header = """# **Release Dokumentation – Version 2.30.0**
+**Datum:** 2026-10-16
+## **Summering**
+## **Nyheter och Förbättringar**
+"""
+
+    def test_accepts_every_combination_of_matching_and_missing_releases(self):
+        for matching in product((False, True), repeat=3):
+            with self.subTest(matching=matching):
+                components = []
+                sections = []
+                for (name, repository), has_release in zip(
+                    release_documentation.REPOSITORIES, matching
+                ):
+                    url = (
+                        f"https://github.com/{repository}/releases/tag/v2.30.0"
+                        if has_release
+                        else None
+                    )
+                    components.append(
+                        {
+                            "name": name,
+                            "version": "v2.30.0" if has_release else None,
+                            "html_url": url,
+                            "release_notes": "",
+                        }
+                    )
+                    sections.append(
+                        f"### **{name} (Version 2.30.0)**\n"
+                        f"[Fullständig ändringslogg →]({url})\n"
+                        if has_release
+                        else f"### **{name}**\nInga ändringar för denna release.\n"
+                    )
+
+                release_documentation.validate_document(
+                    self.header + "\n".join(sections),
+                    "2.30.0",
+                    "2026-10-16",
+                    components,
+                )
+
+    def test_requires_component_section_even_without_a_matching_release(self):
+        component = {"name": "Mobilapp", "version": None, "html_url": None}
+        with self.assertRaisesRegex(RuntimeError, "sections: Mobilapp"):
+            release_documentation.validate_document(
+                self.header, "2.30.0", "2026-10-16", [component]
+            )
+
+    def test_requires_version_heading_when_a_release_matches(self):
+        component = {"name": "Mobilapp", "version": "v2.30.0", "html_url": None}
+        with self.assertRaisesRegex(RuntimeError, r"sections: Mobilapp \(Version"):
+            release_documentation.validate_document(
+                self.header + "### **Mobilapp**\nInga ändringar för denna release.",
+                "2.30.0",
+                "2026-10-16",
+                [component],
             )
 
 
