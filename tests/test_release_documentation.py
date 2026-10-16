@@ -1,9 +1,11 @@
 import importlib.util
+import io
 import os
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
+from urllib.error import HTTPError
 
 
 SCRIPT = (
@@ -76,6 +78,71 @@ class SelectReleaseTests(unittest.TestCase):
             release_documentation.validate_document(
                 document, "2.8.12", "2026-10-09", components
             )
+
+
+class GetReleasesTests(unittest.TestCase):
+    def test_reads_public_and_authenticated_releases(self):
+        for token in (None, "", "read-only-token"):
+            with self.subTest(token=token), patch.object(
+                release_documentation,
+                "urlopen",
+                side_effect=[
+                    io.StringIO('[{"tag_name": "v2.30.0"}]'),
+                    io.StringIO("[]"),
+                ],
+            ) as urlopen:
+                releases = release_documentation.get_releases(
+                    "studio27se/ehub-backend-api", token
+                )
+
+                self.assertEqual(releases, [{"tag_name": "v2.30.0"}])
+                self.assertEqual(urlopen.call_count, 2)
+                for page, call in enumerate(urlopen.call_args_list, start=1):
+                    request = call.args[0]
+                    self.assertIn(f"page={page}", request.full_url)
+                    self.assertEqual(
+                        request.get_header("Authorization"),
+                        "Bearer " + token if token else None,
+                    )
+
+    def test_explains_missing_token_on_not_found(self):
+        for token in (None, ""):
+            with self.subTest(token=token), patch.object(
+                release_documentation,
+                "urlopen",
+                side_effect=HTTPError("url", 404, "Not Found", {}, None),
+            ):
+                with self.assertRaisesRegex(
+                    RuntimeError,
+                    r"studio27se/ehub-backend-api \(HTTP 404\).*"
+                    r"Configure the SUBREPO_READ_TOKEN Actions secret with Contents: read",
+                ):
+                    release_documentation.get_releases(
+                        "studio27se/ehub-backend-api", token
+                    )
+
+    def test_explains_insufficient_token_access_on_not_found(self):
+        with patch.object(
+            release_documentation,
+            "urlopen",
+            side_effect=HTTPError("url", 404, "Not Found", {}, None),
+        ):
+            with self.assertRaisesRegex(
+                RuntimeError, "Check that SUBREPO_READ_TOKEN has Contents: read access"
+            ) as raised:
+                release_documentation.get_releases(
+                    "studio27se/ehub-backend-api", "read-only-token"
+                )
+        self.assertNotIn("read-only-token", str(raised.exception))
+
+    def test_preserves_other_http_errors(self):
+        error = HTTPError("url", 403, "Forbidden", {}, None)
+        with patch.object(release_documentation, "urlopen", side_effect=error):
+            with self.assertRaises(HTTPError) as raised:
+                release_documentation.get_releases(
+                    "studio27se/ehub-backend-api", None
+                )
+        self.assertIs(raised.exception, error)
 
 
 class GenerateDocumentTests(unittest.TestCase):
