@@ -53,8 +53,23 @@ def get_releases(repository, token):
         if token:
             headers["Authorization"] = "Bearer " + token
         request = Request(url, headers=headers)
-        with urlopen(request, timeout=30) as response:
-            page_releases = json.load(response)
+        try:
+            with urlopen(request, timeout=30) as response:
+                page_releases = json.load(response)
+        except HTTPError as error:
+            if error.code != 404:
+                raise
+            token_guidance = (
+                "Check that SUBREPO_READ_TOKEN has Contents: read access"
+                if token
+                else "Configure the SUBREPO_READ_TOKEN Actions secret with Contents: read access"
+            )
+            raise RuntimeError(
+                f"Cannot read releases from {repository} (HTTP 404). "
+                "GitHub also returns 404 for private repositories without access. "
+                f"{token_guidance} to all component repositories, and verify "
+                "that the repository exists."
+            ) from error
         if not page_releases:
             return releases
         releases.extend(page_releases)
